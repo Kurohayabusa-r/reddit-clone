@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(218, 223, 230);
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    background-color: #fff;
+    justify-content: space-around;
+    margin: auto;
+    padding: 10px 20px;
+    height: 60px;
+}
+
+
+.nav-left {
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+}
+
+.nav-center {
+    flex: 4;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 3;
+}
+
+.nav-right a.btn {
+    margin: 0 5px;
+}
+
+.nav-right .dropdown {
+    padding: 0 20px;
+}
+
+.nav-right .dropdown > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 160px;
+}
+
+.nav-right .dropdown > a:hover {
+    border: 1px solid #ccc;
+}
+
+nav .dropdown .profile-picture {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.create-post {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.filter .card {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.filter .card button {
+    padding: 0 20px;
+    height: 35px;
+    margin-left: 20px;
+}
+
+.content {
+    width: 700px;
+    margin-left: 20px;
+}
+
+section.posts .card {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+section.posts .card .votes {
+    width: 15%;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+}
+
+section.posts .card .votes img {
+    width: 70%;
+}
+
+section.posts .card .votes .score {
+    font-size: smaller;
+}
+
+.sidebar {
+    width: 300px;
+    margin: 0 20px;
+}
+
+aside .card {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+aside .card .profile-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+aside ul{
+    width: 90%;
+}
+
+aside a.btn {
+    width: 90%;
+}
+
+footer {
+    margin: 20px 0;
+}
+
+footer .card {
+    border: 1px solid #ccc;
+}
+
+.login-form input {
+    width: 300px;
+    background: none;
+    border-radius: 0%;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.login-form input:focus {
+    background: none;
+    border-bottom: 1px solid #000;
+    box-shadow: none;
+}
+
+.signup-form input {
+    width: 300px;
+    background: none;
+    border-radius: 0%;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.signup-form input:focus {
+    background: none;
+    border-bottom: 1px solid #000;
+    box-shadow: none;
+}
