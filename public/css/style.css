@@ -12,15 +12,14 @@ ul {
     list-style: none;
 }
 
-nav {
+/* nav {
     display: flex;
     background-color: #fff;
     justify-content: space-around;
     margin: auto;
     padding: 10px 20px;
     height: 60px;
-}
-
+} */
 
 .nav-left {
     display: flex;
@@ -46,15 +45,19 @@ nav {
     padding: 0 20px;
 }
 
-.nav-right .dropdown > a {
+nav .dropdown > a {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
-    width: 160px;
+    width: 165px;
 }
 
-.nav-right .dropdown > a:hover {
+nav .dropdown > a > span {
+    font-size: small;
+}
+
+nav .dropdown > a:hover {
     border: 1px solid #ccc;
 }
 
@@ -64,11 +67,19 @@ nav .dropdown .profile-picture {
     object-fit: cover;
 }
 
+nav form {
+    margin-left: auto;
+    width: 100%;
+    max-width: 600px;
+}
+
 main {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-    margin-top: 60px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* padding: 20px 0; */
+    margin-top: 57px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .create-post {
@@ -94,9 +105,13 @@ main {
     margin-left: 20px;
 }
 
+.community-header {
+    background-color: #ccc;
+    height: 200px;
+}
+
 .content {
     width: 700px;
-    margin-left: 20px;
 }
 
 section.posts .card {
@@ -108,7 +123,7 @@ section.posts .card {
 }
 
 section.posts .card .votes {
-    width: 15%;
+    width: 5%;
     background-color: rgb(243, 243, 243);
     display: flex;
     flex-direction: column;
@@ -123,6 +138,10 @@ section.posts .card .votes img {
 
 section.posts .card .votes .score {
     font-size: smaller;
+}
+
+section.posts .card .card-body {
+    width: 95%;
 }
 
 .sidebar {
@@ -157,7 +176,11 @@ footer .card {
     border: 1px solid #ccc;
 }
 
-.login-form input {
+.auth-form form {
+    border-top: 1px solid #a5a5a5;
+}
+
+.auth-form input {
     width: 300px;
     background: none;
     border-radius: 0%;
@@ -165,22 +188,21 @@ footer .card {
     border-bottom: 1px solid #000;
 }
 
-.login-form input:focus {
+.auth-form input:focus {
     background: none;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #000; */
     box-shadow: none;
 }
 
-.signup-form input {
-    width: 300px;
-    background: none;
-    border-radius: 0%;
-    border: none;
-    border-bottom: 1px solid #000;
+.active {
+    border-bottom: 1px solid rgb(0, 132, 255);
 }
 
-.signup-form input:focus {
-    background: none;
-    border-bottom: 1px solid #000;
-    box-shadow: none;
+@media (max-width: 990px) {
+
+    nav form {
+        margin-top: 10px;
+        width: 100%;
+    }
+
 }

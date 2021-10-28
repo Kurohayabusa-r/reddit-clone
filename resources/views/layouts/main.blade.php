@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    @include('partials.navbar')
+    @include('partials.navbar2')
     @yield('content')
 
-    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
 </body>
 
 </html>

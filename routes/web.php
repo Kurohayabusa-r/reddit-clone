@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PostController;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,10 +52,28 @@ Route::get('/', function () {
     return view('home', compact('posts'));
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/r/popular', function () {
+    return view('popular', [
+        'posts' => Post::all()
+    ]);
 });
 
-Route::get('/signup', function () {
-    return view('register');
+Route::get('/r/{community:slug}', [CommunityController::class, 'show']);
+Route::get('/communities', [CommunityController::class, 'index']);
+
+Route::get('/r/{community:slug}/posts/{post:slug}', [PostController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/signup', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/signup', [RegisterController::class, 'store']);
+
+Route::get('/user/{user:username}/posts', function (User $user) {
+    return view('users.profile', [
+        'currentPage' => $user->username,
+        'user' => $user,
+        'posts' => $user->posts
+    ]);
 });
