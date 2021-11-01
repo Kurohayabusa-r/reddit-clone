@@ -25,11 +25,11 @@
                             alt="">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="/r/{{ $post->community->slug }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><a href="/r/{{ $post->community->slug }}">r/{{$post->community->slug}}</a></h6>
+                            <h5 class="card-title"><a href="/r/{{ $post->community->name }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><a href="/r/{{ $post->community->name }}">r/{{$post->community->name}}</a></h6>
                             <h6 class="card-subtitle mb-2 text-muted">Posted by <a href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a></h6>
                             <p class="card-text">{{ $post->excerpt }}</p>
-                            <a href="/r/{{ $post->community->slug }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
+                            <a href="/r/{{ $post->community->name }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
                         </div>
                     </article>
 

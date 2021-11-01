@@ -13,7 +13,7 @@
                         <div class="list-group">
                             @foreach ($communities as $community)
 
-                            <a href="/r/{{ $community->slug }}" class="list-group-item list-group-item-action d-flex gap-3 py-2" aria-current="true">
+                            <a href="/r/{{ $community->name }}" class="list-group-item list-group-item-action d-flex gap-3 py-2" aria-current="true">
                                 <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
                                 <div class="d-flex gap-2 w-100 justify-content-between">
                                     <div>

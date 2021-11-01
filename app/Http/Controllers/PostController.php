@@ -11,7 +11,7 @@ class PostController extends Controller
     public function index(Community $community, Post $post)
     {
         return view('posts.show', [
-            'currentPage' => $post->title . ' : ' . $community->slug,
+            'currentPage' => $post->title . ' : ' . $community->name,
             'community' => $community,
             'post' => $post
         ]);

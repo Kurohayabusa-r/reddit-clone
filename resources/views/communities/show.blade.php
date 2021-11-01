@@ -10,6 +10,14 @@
     </div>
     <div class="d-flex justify-content-center py-4">
         <div class="content">
+
+            @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
             <div class="create-post card">
                 <div class="container">
                     <form class="">
@@ -35,10 +43,10 @@
                         alt="">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/r/{{ $community->slug }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                        <h5 class="card-title"><a href="/r/{{ $community->name }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Posted by <a href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a></h6>
                         <p class="card-text">{{ $post->excerpt }}</p>
-                        <a href="/r/{{ $community->slug }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
+                        <a href="/r/{{ $community->name }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
                     </div>
                 </article>
                 @endforeach
@@ -47,63 +55,13 @@
         <div class="sidebar">
             <aside>
                 <div class="card shadow-sm">
-                    <div class="card-body d-flex flex-column align-items-center">
-                        <h5 class="card-title">Random Communities</h5>
-
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2"
-                                aria-current="true">
-                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                    class="rounded-circle flex-shrink-0">
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">Community 1</h6>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2"
-                                aria-current="true">
-                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                    class="rounded-circle flex-shrink-0">
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">Community 2</h6>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2"
-                                aria-current="true">
-                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                    class="rounded-circle flex-shrink-0">
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">Community 3</h6>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2"
-                                aria-current="true">
-                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                    class="rounded-circle flex-shrink-0">
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">Community 4</h6>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2"
-                                aria-current="true">
-                                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                    class="rounded-circle flex-shrink-0">
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0">Community 5</h6>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="" class="btn btn-primary mt-3 px-5 text-decoration-none text-white">View All</a>
-                    </div>
+                    @include('partials.communityDetails')
+                </div>
+                <div class="card shadow-sm">
+                    @include('partials.communityRules')
+                </div>
+                <div class="card shadow-sm">
+                    @include('partials.communityModerators')
                 </div>
             </aside>
             @include('partials.footer')

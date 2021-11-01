@@ -58,10 +58,12 @@ Route::get('/r/popular', function () {
     ]);
 });
 
-Route::get('/r/{community:slug}', [CommunityController::class, 'show']);
+Route::get('/r/{community:name}', [CommunityController::class, 'show']);
 Route::get('/communities', [CommunityController::class, 'index']);
+Route::get('/create-community', [CommunityController::class, 'create'])->middleware('auth');
+Route::post('/create-community', [CommunityController::class, 'store']);
 
-Route::get('/r/{community:slug}/posts/{post:slug}', [PostController::class, 'index']);
+Route::get('/r/{community:name}/posts/{post:slug}', [PostController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

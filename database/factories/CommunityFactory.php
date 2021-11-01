@@ -23,7 +23,7 @@ class CommunityFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'slug' => $this->faker->slug(2)
+            'type' => 'public'
         ];
     }
 }

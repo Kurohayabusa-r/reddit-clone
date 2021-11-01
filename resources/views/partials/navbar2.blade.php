@@ -29,11 +29,11 @@
                         <span> {{ auth()->user()->username }} </span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./edit-profile.html">Edit User Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Edit User Profile</a></li>
                             <li><a class="dropdown-item" href="/user/{{ auth()->user()->username }}/posts">My Posts</a></li>
                             <li><a class="dropdown-item" href="#">Saved Posts</a></li>
                             <li><a class="dropdown-item" href="#">My Communities</a></li>
-                            <li><a class="dropdown-item" href="#">Create Community</a></li>
+                            <li><a class="dropdown-item" href="/create-community">Create Community</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

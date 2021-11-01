@@ -16,10 +16,10 @@
                         alt="">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/r/{{ $community->slug }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                        <h5 class="card-title"><a href="/r/{{ $community->name }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Posted by <a href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a></h6>
                         <p class="card-text">{{ $post->body }}</p>
-                        <a href="/r/{{ $community->slug }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
+                        <a href="/r/{{ $community->name }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
                     </div>
                 </article>
             </section>
@@ -27,9 +27,7 @@
         <div class="sidebar">
             <aside>
                 <div class="card shadow-sm">
-                    <div class="card-body d-flex flex-column align-items-center">
-                        <h5 class="card-title"><a href="/r/{{ $community->slug }}"> r/{{ $community->name }} </a></h5>
-                    </div>
+                    @include('partials.communityDetails')
                 </div>
             </aside>
             @include('partials.footer')

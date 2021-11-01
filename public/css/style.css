@@ -198,6 +198,15 @@ footer .card {
     border-bottom: 1px solid rgb(0, 132, 255);
 }
 
+/* .create-community-form {
+    width: 320px;
+    margin: 0 auto;
+} */
+
+.create-community-form .input-group {
+    width: 300px;
+}
+
 @media (max-width: 990px) {
 
     nav form {
