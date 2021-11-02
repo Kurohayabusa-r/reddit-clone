@@ -122,7 +122,22 @@ section.posts .card {
     overflow: hidden;
 }
 
-section.posts .card .votes {
+section.post .card {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+}
+
+section.posts .card .card-body {
+    width: 95%;
+}
+
+section.post .card .card-body {
+    width: 95%;
+}
+
+.card .votes {
     width: 5%;
     background-color: rgb(243, 243, 243);
     display: flex;
@@ -132,21 +147,18 @@ section.posts .card .votes {
     border-bottom-left-radius: 5px; */
 }
 
-section.posts .card .votes img {
+.card .votes img {
     width: 70%;
 }
 
-section.posts .card .votes .score {
+.card .votes .score {
     font-size: smaller;
 }
 
-section.posts .card .card-body {
-    width: 95%;
-}
 
 .sidebar {
     width: 300px;
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
 aside .card {
@@ -169,7 +181,7 @@ aside a.btn {
 }
 
 footer {
-    margin: 20px 0;
+    margin-top: 1rem;
 }
 
 footer .card {

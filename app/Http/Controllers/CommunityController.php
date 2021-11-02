@@ -19,7 +19,8 @@ class CommunityController extends Controller
         return view('communities.show', [
             'currentPage' => $community->name,
             'community' => $community,
-            'posts' => $community->posts
+            'posts' => $community->posts,
+            'communityCreatedAt' => date('M d, Y', strtotime($community->created_at))
         ]);
     }
 

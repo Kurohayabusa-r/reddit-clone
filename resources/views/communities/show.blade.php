@@ -6,7 +6,7 @@
 <main>
     <div class="community-header">
         <p class="display-4"> {{ $community->name }} </p>
-        <small>r/{{ $community->slug }}</small>
+        <small>r/{{ $community->name }}</small>
     </div>
     <div class="d-flex justify-content-center py-4">
         <div class="content">
@@ -54,10 +54,10 @@
         </div>
         <div class="sidebar">
             <aside>
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mb-3">
                     @include('partials.communityDetails')
                 </div>
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mb-3">
                     @include('partials.communityRules')
                 </div>
                 <div class="card shadow-sm">

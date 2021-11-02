@@ -13,7 +13,8 @@ class PostController extends Controller
         return view('posts.show', [
             'currentPage' => $post->title . ' : ' . $community->name,
             'community' => $community,
-            'post' => $post
+            'post' => $post,
+            'communityCreatedAt' => date('M d, Y', strtotime($community->created_at))
         ]);
     }
 }

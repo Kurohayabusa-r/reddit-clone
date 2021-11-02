@@ -6,7 +6,7 @@
 <main>
     <div class="d-flex justify-content-center py-4">
         <div class="content">
-            <section class="posts">
+            <section class="post">
                 <article class="card">
                     <div class="votes">
                         <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"

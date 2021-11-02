@@ -23,7 +23,8 @@ class CommunityFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'type' => 'public'
+            'type' => 'public',
+            'description' => $this->faker->sentence(10)
         ];
     }
 }
