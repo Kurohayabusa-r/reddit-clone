@@ -8,14 +8,18 @@ class SubscriptionController extends Controller
 {
     public function join(Request $request)
     {
-        auth()->user()->communities()->attach($request['community_id']);
+        if (!(auth()->user()->communities->contains($request['community_id']))) {
+            auth()->user()->communities()->attach($request['community_id']);
+        }
 
         return back();
     }
 
     public function leave(Request $request)
     {
-        auth()->user()->communities()->detach($request['community_id']);
+        if (auth()->user()->communities->contains($request['community_id'])) {
+            auth()->user()->communities()->detach($request['community_id']);
+        }
 
         return back();
     }

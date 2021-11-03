@@ -12,12 +12,7 @@
     <form action="/leave-community" method="POST" class="text-center mb-3">
         @csrf
         <input type="hidden" name="community_id" value="{{ $community->id }}">
-        <button type="submit" class="btn btn-outline-primary w-75" id="leaveButton"
-            onmouseover="(function() {
-            return document.getElementById('leaveButton').innerHTML = 'Leave'; })()"
-            onmouseout="(function() {
-            return document.getElementById('leaveButton').innerHTML = 'Joined'; })()">
-            Joined</button>
+        <button type="submit" class="btn btn-outline-primary w-75" id="leaveButton" onmouseover="changeText(this)" onmouseout="changeText(this)">Joined</button>
     </form>
     @else
     <form action="/join-community" method="POST" class="text-center mb-3">

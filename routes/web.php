@@ -21,45 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $posts = [
-        [
-            "title" => "Post Title 1",
-            "community" => "Community 1",
-            "author" => "Author 1",
-            "text" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, ad! Impedit
-            reprehenderit temporibus molestiae nam accusamus. Voluptatibus eligendi quidem debitis
-            delectus
-            amet at quaerat? Cupiditate soluta accusantium est quibusdam qui."
-        ],
-        [
-            "title" => "Post Title 2",
-            "community" => "Community 2",
-            "author" => "Author 2",
-            "text" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, ad! Impedit
-            reprehenderit temporibus molestiae nam accusamus. Voluptatibus eligendi quidem debitis
-            delectus
-            amet at quaerat? Cupiditate soluta accusantium est quibusdam qui."
-        ],
-        [
-            "title" => "Post Title 3",
-            "community" => "Community 3",
-            "author" => "Author 3",
-            "text" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, ad! Impedit
-            reprehenderit temporibus molestiae nam accusamus. Voluptatibus eligendi quidem debitis
-            delectus
-            amet at quaerat? Cupiditate soluta accusantium est quibusdam qui."
-        ]
-    ];
-    return view('home', compact('posts'));
-});
-
-Route::get('/r/popular', function () {
-    return view('popular', [
-        'posts' => Post::all()
-    ]);
-});
-
+Route::get('/', [CommunityController::class, 'home']);
+Route::get('/r/popular', [CommunityController::class, 'popular']);
 Route::get('/r/{community:name}', [CommunityController::class, 'show']);
 Route::get('/communities', [CommunityController::class, 'index']);
 Route::get('/create-community', [CommunityController::class, 'create'])->middleware('auth');

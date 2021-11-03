@@ -6,13 +6,6 @@
     <main>
         <div class="d-flex justify-content-center py-4">
             <div class="content">
-                <div class="create-post card">
-                    <div class="container">
-                        <form class="">
-                            <input class="form-control" type="text" placeholder="Create a post" aria-label="Search">
-                        </form>
-                    </div>
-                </div>
                 <div class="filter">
                     <div class="card">
                         <button type="button" class="btn btn-outline-dark">Hot</button>
@@ -21,26 +14,25 @@
                     </div>
                 </div>
                 <section class="posts">
-                    @foreach ($posts as $post)
-
-                    <article class="card">
-                        <div class="votes">
-                            <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"
-                            alt="">
-                            <div class="score">123</div>
-                            <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-bottom-512.png"
-                            alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="">{{$post["title"]}}</a></h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{$post["community"]}}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">Posted by {{$post["author"]}}</h6>
-                            <p class="card-text">{{$post["text"]}}</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </article>
-
+                    @foreach ($communities as $community)
+                        @foreach ($community->posts as $post)
+                        <article class="card">
+                            <div class="votes">
+                                <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"
+                                alt="">
+                                <div class="score">123</div>
+                                <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-bottom-512.png"
+                                alt="">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="/r/{{ $post->community->name }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><a href="/r/{{ $post->community->name }}">r/{{$post->community->name}}</a></h6>
+                                <h6 class="card-subtitle mb-2 text-muted">Posted by <a href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a></h6>
+                                <p class="card-text">{{ $post->excerpt }}</p>
+                                <a href="/r/{{ $post->community->name }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
+                            </div>
+                        </article>
+                        @endforeach
                     @endforeach
                 </section>
             </div>
