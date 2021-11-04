@@ -32,7 +32,7 @@
                             <li><a class="dropdown-item" href="#">Edit User Profile</a></li>
                             <li><a class="dropdown-item" href="/user/{{ auth()->user()->username }}/posts">My Posts</a></li>
                             <li><a class="dropdown-item" href="#">Saved Posts</a></li>
-                            <li><a class="dropdown-item" href="#">My Communities</a></li>
+                            <li><a class="dropdown-item" href="/user/{{ auth()->user()->username }}/communities">My Communities</a></li>
                             <li><a class="dropdown-item" href="/create-community">Create Community</a></li>
                             <li>
                                 <hr class="dropdown-divider">

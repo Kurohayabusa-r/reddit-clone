@@ -50,6 +50,6 @@ class User extends Authenticatable
 
     public function communities()
     {
-        return $this->belongsToMany(Community::class);
+        return $this->belongsToMany(Community::class)->withTimestamps();
     }
 }

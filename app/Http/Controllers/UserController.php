@@ -14,4 +14,13 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+
+    public function communities(User $user)
+    {
+        return view('users.communities', [
+            'currentPage' => $user->username,
+            'user' => $user,
+            'communities' => $user->communities()->simplePaginate(15)
+        ]);
+    }
 }
