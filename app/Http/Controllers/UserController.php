@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         return view('users.posts', [
             'currentPage' => $user->username,
-            'user' => $user
+            'user' => $user->load('posts')
         ]);
     }
 

@@ -33,7 +33,7 @@
                 </div>
             </div>
             <section class="posts">
-                @foreach ($posts as $post)
+                @foreach ($community->posts as $post)
                 <article class="card">
                     <div class="votes">
                         <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"

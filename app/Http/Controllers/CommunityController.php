@@ -20,8 +20,7 @@ class CommunityController extends Controller
     {
         return view('communities.show', [
             'currentPage' => $community->name,
-            'community' => $community,
-            'posts' => $community->posts,
+            'community' => $community->load('posts', 'users'),
             'communityCreatedAt' => date('M d, Y', strtotime($community->created_at))
         ]);
     }
@@ -55,7 +54,7 @@ class CommunityController extends Controller
     {
         if (Auth::check()) {
             return view('home', [
-                'communities' => auth()->user()->communities,
+                'communities' => auth()->user()->communities->load('posts'),
                 'randomCommunities' => Community::inRandomOrder()->take(5)->get()
             ]);
         }
