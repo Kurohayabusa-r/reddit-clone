@@ -23,4 +23,22 @@ class UserController extends Controller
             'communities' => $user->communities()->simplePaginate(15)
         ]);
     }
+
+    public function following(User $user)
+    {
+        return view('users.following', [
+            'currentPage' => $user->username,
+            'user' => $user,
+            'following' => $user->following()->simplePaginate(15)
+        ]);
+    }
+
+    public function followers(User $user)
+    {
+        return view('users.followers', [
+            'currentPage' => $user->username,
+            'user' => $user,
+            'followers' => $user->followers()->simplePaginate(15)
+        ]);
+    }
 }

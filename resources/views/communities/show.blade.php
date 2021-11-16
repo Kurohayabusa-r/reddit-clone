@@ -37,14 +37,17 @@
                 <article class="card">
                     <div class="votes">
                         <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"
-                        alt="">
+                            alt="">
                         <div class="score">123</div>
                         <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-bottom-512.png"
-                        alt="">
+                            alt="">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/r/{{ $community->name }}/posts/{{ $post->slug }}">{{ $post->title }}</a></h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Posted by <a href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a></h6>
+                        <h5 class="card-title"><a href="/r/{{ $community->name }}/posts/{{ $post->slug }}">{{
+                                $post->title }}</a></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Posted by <a
+                                href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a>
+                            {{$post->created_at->diffForHumans()}}</h6>
                         <p class="card-text">{{ $post->excerpt }}</p>
                         <a href="/r/{{ $community->name }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
                     </div>

@@ -7,3 +7,12 @@ function changeText(e) {
         e.innerHTML = 'Joined';
     }
 }
+
+function changeTextFollow(e) {
+    if (e.innerHTML.toLowerCase() == 'followed') {
+        e.innerHTML = 'Unfollow';
+    }
+    else if (e.innerHTML.toLowerCase() == 'unfollow') {
+        e.innerHTML = 'Followed';
+    }
+}

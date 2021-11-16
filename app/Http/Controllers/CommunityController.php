@@ -49,16 +49,4 @@ class CommunityController extends Controller
             'randomCommunities' => Community::inRandomOrder()->take(5)->get()
         ]);
     }
-
-    public function home()
-    {
-        if (Auth::check()) {
-            return view('home', [
-                'communities' => auth()->user()->communities->load('posts'),
-                'randomCommunities' => Community::inRandomOrder()->take(5)->get()
-            ]);
-        }
-
-        return redirect('/r/popular');
-    }
 }

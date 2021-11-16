@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FollowingController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [CommunityController::class, 'home']);
+Route::get('/', [PostController::class, 'home']);
+Route::get('/r/{community:name}/posts/{post:slug}', [PostController::class, 'index']);
+
 Route::get('/r/popular', [CommunityController::class, 'popular']);
 Route::get('/r/{community:name}', [CommunityController::class, 'show']);
 Route::get('/communities', [CommunityController::class, 'index']);
@@ -30,7 +33,8 @@ Route::post('/create-community', [CommunityController::class, 'store']);
 Route::post('/join-community', [SubscriptionController::class, 'join']);
 Route::post('/leave-community', [SubscriptionController::class, 'leave']);
 
-Route::get('/r/{community:name}/posts/{post:slug}', [PostController::class, 'index']);
+Route::post('/follow', [FollowingController::class, 'follow']);
+Route::post('/unfollow', [FollowingController::class, 'unfollow']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -41,3 +45,5 @@ Route::post('/signup', [RegisterController::class, 'store']);
 
 Route::get('/user/{user:username}/posts', [UserController::class, 'posts']);
 Route::get('/user/{user:username}/communities', [UserController::class, 'communities']);
+Route::get('/user/{user:username}/following', [UserController::class, 'following']);
+Route::get('/user/{user:username}/followers', [UserController::class, 'followers']);

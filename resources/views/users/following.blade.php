@@ -18,27 +18,27 @@
                     <a class="nav-link text-black" href="#">Saved</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="/user/{{ $user->username }}/following">Following</a>
+                    <a class="nav-link active" href="/user/{{ $user->username }}/following">Following</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-black" href="/user/{{ $user->username }}/followers">Followers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/user/{{ $user->username }}/communities">Communities</a>
+                    <a class="nav-link text-black" href="/user/{{ $user->username }}/communities">Communities</a>
                 </li>
             </ul>
             <section class="communities">
-                @foreach ($communities as $community)
+                @foreach ($following as $followee)
                 <div class="card mb-1">
                     <div class="card-body">
-                        <a href="/r/{{ $community->name }}" class="text-decoration-none text-black">r/{{
-                            $community->name }}</a>
+                        <a href="/user/{{ $followee->username }}/posts" class="text-decoration-none text-black">{{
+                            $followee->username }}</a>
                     </div>
                 </div>
                 @endforeach
             </section>
             <div class="d-flex flex-row justify-content-center">
-                {{ $communities->links() }}
+                {{ $following->links() }}
             </div>
         </div>
         <div class="sidebar">
