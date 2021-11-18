@@ -8,9 +8,9 @@
         <div class="content">
             <div class="filter">
                 <div class="card">
-                    <button type="button" class="btn btn-outline-dark">Hot</button>
-                    <button type="button" class="btn btn-outline-dark">New</button>
-                    <button type="button" class="btn btn-outline-dark">Top</button>
+                    <button type="button" class="btn btn-outline-dark"><i class="fas fa-fire"></i>Hot</button>
+                    <button type="button" class="btn btn-outline-dark"><i class="fas fa-newspaper"></i>New</button>
+                    <button type="button" class="btn btn-outline-dark"><i class="fas fa-poll"></i>Top</button>
                 </div>
             </div>
             <section class="posts">
