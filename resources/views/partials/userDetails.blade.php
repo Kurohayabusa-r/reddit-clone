@@ -1,7 +1,6 @@
 <div class="card shadow-sm">
     <div class="card-body d-flex flex-column align-items-center">
-        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-            class="profile-picture rounded-circle mt-2 mb-3 shadow" alt="">
+        <img src="/uploads/avatars/{{ $user->avatar }}" class="avatar rounded-circle mt-2 mb-3 shadow" alt="">
         <h5 class="card-title">{{$user->username}}</h5>
 
         <ul class="list-group list-group-flush">
@@ -35,7 +34,7 @@
 
     @else
     <div class="text-center mb-3">
-        <a class="btn btn-primary w-75" href="#">Edit Profile</a>
+        <a class="btn btn-primary w-75" href="/user/{{ auth()->user()->username }}/edit">Edit Profile</a>
     </div>
     @endif
     @endauth

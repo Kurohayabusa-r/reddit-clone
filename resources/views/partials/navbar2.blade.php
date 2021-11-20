@@ -24,12 +24,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-                        class="profile-picture rounded-circle me-2" alt="">
+                        <img src="/uploads/avatars/{{ auth()->user()->avatar }}" class="profile-picture rounded-circle me-2" alt="">
                         <span> {{ auth()->user()->username }} </span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Edit User Profile</a></li>
+                            <li><a class="dropdown-item" href="/user/{{ auth()->user()->username }}/edit">Edit User Profile</a></li>
                             <li><a class="dropdown-item" href="/user/{{ auth()->user()->username }}/posts">My Posts</a></li>
                             <li><a class="dropdown-item" href="#">Saved Posts</a></li>
                             <li><a class="dropdown-item" href="/user/{{ auth()->user()->username }}/communities">My Communities</a></li>

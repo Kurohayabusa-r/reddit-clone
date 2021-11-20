@@ -43,7 +43,9 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/signup', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/signup', [RegisterController::class, 'store']);
 
+Route::get('/user/{user:username}/edit', [UserController::class, 'edit']);
 Route::get('/user/{user:username}/posts', [UserController::class, 'posts']);
 Route::get('/user/{user:username}/communities', [UserController::class, 'communities']);
 Route::get('/user/{user:username}/following', [UserController::class, 'following']);
 Route::get('/user/{user:username}/followers', [UserController::class, 'followers']);
+Route::put('/update-profile', [UserController::class, 'update']);

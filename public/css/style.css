@@ -166,7 +166,7 @@ aside .card {
     border: 1px solid #ccc;
 }
 
-aside .card .profile-picture {
+.avatar {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -208,6 +208,10 @@ footer .card {
 
 .active {
     border-bottom: 1px solid rgb(0, 132, 255);
+}
+
+.profile-form form {
+    width: 350px;
 }
 
 /* .create-community-form {
