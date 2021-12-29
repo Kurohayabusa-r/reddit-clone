@@ -20,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('locale/{locale}', function($locale){
+    \Session::put('locale',$locale);
+    return redirect()->back();
+});
 Route::get('/', [PostController::class, 'home']);
 Route::get('/r/{community:name}/posts/{post:slug}', [PostController::class, 'index']);
 

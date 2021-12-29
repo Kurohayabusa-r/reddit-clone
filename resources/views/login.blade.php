@@ -21,7 +21,7 @@
         @endif
 
         <div class="mb-3">
-            <p class="display-6 mt-3">Login</p>
+            <p class="display-6 mt-3">{{__('Login')  }}</p>
         </div>
         <form action="/login" method="POST" class="pt-4">
             @csrf
@@ -40,10 +40,10 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <button type="submit" class="btn btn-primary w-100">Log In</button>
+                <button type="submit" class="btn btn-primary w-100">{{__('Login')  }}</button>
             </div>
         </form>
-        <small>Don't have an account? <a href="/signup" class="text-decoration-none">Sign Up</a></small>
+        <small>{{__('Dont have an account')  }}? <a href="/signup" class="text-decoration-none">{{__('Sign Up')  }}</a></small>
     </div>
 </main>
 @endsection

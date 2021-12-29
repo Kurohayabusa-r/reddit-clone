@@ -9,20 +9,23 @@
             <section class="post">
                 <article class="card">
                     <div class="votes">
-                        <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"
-                            alt="">
+                        <form action="" method="POST">
+                        @csrf
+                        <button type="button" class="btn btn-outline-success"><i class="fas fa-chevron-up"></i></button>
+                    <form>
                         <div class="score">123</div>
-                        <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-bottom-512.png"
-                            alt="">
+                    <form action="" method="POST">
+                    @csrf
+                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-chevron-down"></i></button>
+                    <form>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/r/{{ $community->name }}/posts/{{ $post->slug }}">{{
+                        <h5 class="card-title"><a href="#/r/{{ $community->name }}/posts/{{ $post->slug }}">{{
                                 $post->title }}</a></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Posted by <a
                                 href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a>
                             {{$post->created_at->diffForHumans()}}</h6>
                         <p class="card-text">{{ $post->body }}</p>
-                        <a href="/r/{{ $community->name }}/posts/{{ $post->slug }}" class="card-link">Card link</a>
                     </div>
                 </article>
             </section>

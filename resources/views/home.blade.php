@@ -18,11 +18,17 @@
                 @foreach ($posts as $post)
                 <article class="card">
                     <div class="votes">
-                        <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-top-512.png"
-                            alt="">
-                        <div class="score">123</div>
-                        <img src="https://cdn3.iconfinder.com/data/icons/user-interface-169/32/chevron-bottom-512.png"
-                            alt="">
+                        <form action="" method="POST">
+                        @csrf
+                        <button type="button" class="btn btn-outline-success"><i class="fas fa-chevron-up"></i></button>
+                    <form>
+                       <div class="score">
+                        {{  $post->votes  }}
+                       </div>
+                    <form action="" method="POST">
+                    @csrf
+                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-chevron-down"></i></button>
+                    <form>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><a href="/r/{{ $post->community->name }}/posts/{{ $post->slug }}">{{
@@ -33,8 +39,6 @@
                                 href="/user/{{ $post->user->username }}/posts">{{ $post->user->username }}</a>
                             {{$post->created_at->diffForHumans()}}</h6>
                         <p class="card-text">{{ $post->excerpt }}</p>
-                        <a href="/r/{{ $post->community->name }}/posts/{{ $post->slug }}" class="card-link">Card
-                            link</a>
                     </div>
                 </article>
                 @endforeach

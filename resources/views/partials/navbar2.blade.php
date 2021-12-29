@@ -11,7 +11,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <form class="ms-auto">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder={{__('Search')  }} aria-label="Search">
                 </form>
                 <ul class="navbar-nav ms-auto">
                 @auth
@@ -51,12 +51,28 @@
                     </li>
                 @endauth
                 @guest
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <img class="flag-icons" src="{{ __('/icons/'.app()->getLocale().'.png') }}"> 
+                            
+                    </a>
+                    <div class="dropdown-menu">
+                        @if(app()->getLocale()=='id')
+                            <a href ="{{url('locale/en')}}" class="dropdown-item"><img src="{{('/icons/en.png')}}">{{__('english') }}</a>
+                        @endif
+                        @if(app()->getLocale()=='en')
+                            <a href ="{{ url('locale/id') }}" class="dropdown-item"><img src="{{('/icons/id.png') }}">{{__('indonesian') }}</a>
+                        @endif
+                        
+                    </div>
+                </li>
                     <li class="nav-item">
-                        <a href="/login" class="nav-link {{(request()->is('login')) ? 'active' : ''}}">Log In</a>
+                        <a href="/login" class="nav-link {{(request()->is('login')) ? 'active' : ''}}">{{__('Login')  }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/signup" class="nav-link {{(request()->is('signup')) ? 'active' : ''}}">Sign Up</a>
+                        <a href="/signup" class="nav-link {{(request()->is('signup')) ? 'active' : ''}}">{{__('Sign Up')  }}</a>
                     </li>
+                    
                 @endguest
                 </ul>
             </div>
